@@ -6,7 +6,7 @@ import axios from 'axios'
 import '../src/plugins/axios'
 import App from './App.vue'
 import router from './router'
-
+import '../src/assets/icons.css'
 const app = createApp(App)
 app.use(axios)
 app.use(createPinia())
