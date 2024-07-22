@@ -1,12 +1,10 @@
-import './assets/main.css'
-
+import './assets/imports.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import axios from 'axios'
 import '../src/plugins/axios'
 import App from './App.vue'
 import router from './router'
-import '../src/assets/icons.css'
 const app = createApp(App)
 app.use(axios)
 app.use(createPinia())
