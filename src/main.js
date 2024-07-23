@@ -1,4 +1,4 @@
-import './assets/imports.css'
+import './assets/css/imports.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import axios from 'axios'

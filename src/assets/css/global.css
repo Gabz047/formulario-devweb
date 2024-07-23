@@ -2,9 +2,10 @@
 :root{
   --app-background-color: #E5E5E5;
   --purple-default: #6358DC;
-  --text-color-default: "black";
-  --form-default: "white";
-  --text-font-default: Popins, sans-serif 
+  --text-color-default: black;
+  --form-default: white;
+  --text-font-default: Popins, sans-serif;
+  --input-colors: #ECECEC;
 }
 
 *{
@@ -20,4 +21,12 @@
   font-family: var(--text-font-default);
   display: flex;
   justify-content: center;
+  padding: 20px;
 } 
+
+.form-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
