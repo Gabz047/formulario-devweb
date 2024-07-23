@@ -1,6 +1,5 @@
 <script setup>
 import { reactive, ref } from 'vue'
-
 const form = reactive({
   email: null,
   password: null
@@ -58,7 +57,7 @@ const passwordtotext = ref(false)
       </div>
       <div class="btn-actions">
           <button>Login</button>
-          <p>Don't have an account? <span>Register</span></p>
+          <p>Don't have an account? <span @click="$emit('create')">Register</span></p>
       </div>
     </div>
   </div>

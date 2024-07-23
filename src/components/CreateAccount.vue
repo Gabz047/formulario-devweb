@@ -54,7 +54,7 @@ import { states } from '@/utils/state';
                 <div class="box-inputs-img"></div>
                 <div class="box-inputs-tittle"></div>
                 <select id="">
-                    <option v-for="state in states" :value="state.id" >{{ state.name }}</option>
+                    <option v-for="state in states" :key="state.id" :value="state.id" >{{ state.name }}</option>
                 </select>
                 </div>
                 
@@ -110,7 +110,7 @@ import { states } from '@/utils/state';
 
             <div class="box-changeTo-login">
                 <p>Already have an account?</p>
-                <router-link to="/home">Login</router-link>
+                <p @click="$emit('login')">Login</p>
             </div>
         </section>
     </main>
