@@ -29,3 +29,17 @@ export const states = ref([
         { id: 'SE', name: 'Sergipe' },
         { id: 'TO', name: 'Tocantins' }
 ])
+
+export const languages = ref([
+        { id: 'js', name: 'JavaScript' },
+        { id: 'py', name: 'Python' },
+        { id: 'java', name: 'Java' },
+        { id: 'rb', name: 'Ruby' },
+        { id: 'php', name: 'PHP' },
+        { id: 'csharp', name: 'C#' },
+        { id: 'cpp', name: 'C++' },
+        { id: 'swift', name: 'Swift' },
+        { id: 'go', name: 'Go' },
+        { id: 'rust', name: 'Rust' },
+        { id: 'ts', name: 'TypeScript' },
+      ]);

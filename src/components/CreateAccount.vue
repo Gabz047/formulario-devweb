@@ -1,5 +1,5 @@
 <script setup>
-import { states } from '@/utils/state'
+import { states, languages } from '@/utils/state'
 import { ref, computed } from 'vue'
 import EmailComponent from './CreateAccount_Components/inputs/EmailComponent.vue'
 import UsernameComponent from './CreateAccount_Components/inputs/UsernameComponent.vue'
@@ -96,15 +96,16 @@ const nextSection = computed(() => {
           </div>
 
           <div class="box-input-languages">
+
             <div class="box-languages-send">
               <h3>Languages</h3>
             </div>
 
             <div class="box-languages-list">
               <ul>
-                <li>
+                <li v-for="(language, index) in languages" :key="index">
                   <input type="checkbox" />
-                  <p>Python</p>
+                  <p>{{ language.name }}</p>
                 </li>
               </ul>
             </div>
