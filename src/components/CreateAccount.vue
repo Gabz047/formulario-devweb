@@ -1,37 +1,41 @@
 <script setup>
 import { ref, computed, onMounted, reactive } from 'vue'
-import {useStatesStore} from '../stores/states'
-import { useLanguagesStore } from '../stores/languages'
-import EmailComponent from './CreateAccount_Components/inputs/EmailComponent.vue'
-import UsernameComponent from './CreateAccount_Components/inputs/UsernameComponent.vue'
 import PasswordComponent from './CreateAccount_Components/inputs/PasswordComponent.vue'
 import PasswordConfirmComponent from './CreateAccount_Components/inputs/PasswordConfirmComponent.vue'
 import AdressComponent from './CreateAccount_Components/inputs/AdressComponent.vue'
 import CityComponent from './CreateAccount_Components/inputs/CityComponent.vue'
 import { useFormStore } from '../stores/form'
 import InputComponent from './InputComponent.vue'
+import API from '@/api/global'
 
 const hobbie = ref('')
 const formStore = useFormStore()
-const store = useStatesStore()
-const store2 = useLanguagesStore()
+const api = new API()
+
+const createform = ref([
+  {value: '', tittle: `email`, icon: `mdi mdi-email`, class: `box-inputs-content` },
+  {value: '', tittle: `user`, icon: `mdi mdi-account`, class: `box-inputs-content` },
+
+])
 
 const statesComp = computed(() =>{
-  return store.states
+  return formStore.states
 })
 const languagesComp = computed(() =>{
-  return store2.languages
+  return formStore.languages
 })
 
-function addHobbie(hobbie) {
+async function addHobbie(hobbie) {
     formStore.hobbies.push(hobbie)
+    await api.Criar('/hobbies/', {description: hobbie})
 }
 
-function removeHobbie(hobbie,index) {
+async function removeHobbie(hobbie,index) {
     hobbie.splice(index, 1)
+    const hobbiesapi = await api.Listar('/hobbies/')
+    const findhobbie = hobbiesapi.find(hobbie => hobbie.description === hobbie)
+    await api.Deletar(`/hobbies/${findhobbie.id}`)
 }
-
-const showcontainer = false
 
 const counter = ref(0)
 
@@ -44,14 +48,14 @@ const nextSection = computed(() => {
   }
 })
 
-const inputsInfo = ref([
-  {tittle: 'Email', icon: 'mdi mdi-email', class: 'box-inputs-content'},
-  {tittle: 'Username', icon: 'mdi mdi-account', class: 'box-inputs-content'},
-])
+
+
+function create() {
+  console.log(createform.value)
+}
 
 onMounted(() =>{
-  store.GetStates('/states/')
-  store2.GetLanguages('/languages/')
+  formStore.GetAll('/languages/', '/hobbies/')
 })
 </script>
 <template>
@@ -71,7 +75,7 @@ onMounted(() =>{
 
         <section class="container-inputs s1" v-if="nextSection === 0">
           
-          <InputComponent v-for="item in inputsInfo" :tittle="item.tittle" :icon="item.icon" :class="item.class"/>
+          <InputComponent v-for="item, index in createform" :key="index" :tittle="item.tittle" :icon="item.icon" :class="item.class" v-model="item.value"/>
 
           <PasswordComponent />
 
@@ -91,8 +95,8 @@ onMounted(() =>{
             <div class="box-inputs-content">
             <div class="box-inputs-tittle"><p>State</p></div>
             <select id="">
-              <option v-for="state in states" :key="state.id" :value="state.id">
-                <p class="option-name">{{ state.name }}</p>
+              <option v-for="state in statesComp" :key="state.id" :value="state.id">
+                <p class="option-name">{{ state.description }}</p>
               </option>
             </select>
             </div>
@@ -109,7 +113,7 @@ onMounted(() =>{
               <ul>
                 <li v-for="(hobbie,index) in formStore.hobbies" :key="index">
                   <p>{{ hobbie }}</p>
-                  <button @click="removeHobbie(formStore.hobbies, index)"><i class="mdi mdi-close"></i></button>
+                  <button @click="removeHobbie(formStore.hobbies)"><i class="mdi mdi-close"></i></button>
                 </li>
               </ul>
             </div>
@@ -149,7 +153,7 @@ onMounted(() =>{
         </section>
 
         <div class="box-btn-create" v-if="nextSection === 2">
-          <button>Create</button>
+          <button @click="create()">Create</button>
         </div>
 
         <span class="box-btn-next" @click="counter++" v-if="nextSection < 2">
