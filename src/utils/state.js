@@ -37,7 +37,6 @@ export const languages = ref([
         { id: 'rb', name: 'Ruby' },
         { id: 'php', name: 'PHP' },
         { id: 'csharp', name: 'C#' },
-        { id: 'cpp', name: 'C++' },
         { id: 'swift', name: 'Swift' },
         { id: 'go', name: 'Go' },
         { id: 'rust', name: 'Rust' },

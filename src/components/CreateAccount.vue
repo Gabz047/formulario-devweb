@@ -27,7 +27,7 @@ const counter = ref(0)
 const nextSection = computed(() => {
   if (counter.value === 3) {
     console.log(counter.value)
-    return (counter.value = 0)
+    return counter.value = 0
   } else {
     return counter.value
   }
@@ -98,7 +98,7 @@ const nextSection = computed(() => {
           <div class="box-input-languages">
 
             <div class="box-languages-send">
-              <h3>Languages</h3>
+              <p>Languages</p>
             </div>
 
             <div class="box-languages-list">
@@ -114,27 +114,31 @@ const nextSection = computed(() => {
 
         <section class="container-inputs s3" v-if="nextSection === 2">
           <div class="box-input-biography">
-            <div class="box-biography-tittle">
-              <h3>Biography</h3>
+            <div class="box-inputs-biography-tittle">
+              <p>Biography</p>
             </div>
             <textarea></textarea>
           </div>
 
-          <div class="box-">
-            <div class="box-i">
-              <h3>Profile Photo</h3>
+          <div class="box-file">
+            <div class="box-tittle-file">
+              <p>Profile Photo</p>
             </div>
             <input type="file" />
           </div>
         </section>
 
-        <div class="box-btn-create" v-if="showcontainer">
+        <div class="box-btn-create" v-if="nextSection === 2">
           <button>Create</button>
         </div>
 
-        <span class="box-btn-next" @click="counter++">
+        <span class="box-btn-next" @click="counter++" v-if="nextSection < 2">
           <p>Next section</p>
           <i class="mdi mdi-arrow-right-thick"></i>
+        </span>
+        <span class="box-btn-next" @click="counter++" v-else>
+          <i class="mdi mdi-arrow-left-thick"></i>
+          <p>Back to start</p>
         </span>
 
         <div class="box-changeTo-login">

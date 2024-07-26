@@ -1,4 +1,5 @@
 .create-main {
+    max-width: 100%;
     width: 100%;
     height: 98%;
     display: flex;
@@ -10,11 +11,16 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 }
 
 .create-img img {
-    width: 100%;
-    height: 100%;
+    width: 2000px;
+    height: 1500px;
+    rotate: -10deg;
 }
 
 .create-section {
@@ -151,7 +157,6 @@
     margin-bottom: 40px;
     font-size: 15px;
     align-items: center;
-
     &:hover {
         color: var(--purple-default);cursor: pointer;    
     }
@@ -231,7 +236,7 @@
 .box-hobbies-list {
     width: 100%;
     height: 65%;
- 
+   
 }
 
 .box-hobbies-list ul {
@@ -254,6 +259,7 @@
     font-size: 13px;
     color: var(--form-default);
     align-items: center;
+
     max-width: 200px;
     max-height: 40px;
 }
@@ -300,12 +306,12 @@
     list-style: none;
     align-items: center;
     overflow-x: auto;
+    padding: 10px;
 }
 
 .box-languages-list ul {
     display: flex;
     width: 100%;
-    padding-left: 10px;
     gap: 10px;
     height: 40px;
 }
@@ -321,3 +327,79 @@
     border-radius: 5px;
     color: var(--form-default);
 }
+
+.s3 {
+    height: 45%;
+}
+
+.box-input-biography {
+    width: 100%;
+    background-color: var(--input-colors);
+    height: 250px;
+    border-radius: 8px;
+}
+
+.box-inputs-biography-tittle {
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    padding: 15px 0 0 30px;
+    font-weight: 500;
+}
+
+.box-input-biography textarea{
+    width: 100%;
+    height: calc((95% - 32px));
+    margin-top: 5%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--input-colors);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    resize: none;
+}
+
+.box-file {
+    width: 100%;
+    background-color: var(--input-colors);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.box-tittle-file {
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    padding: 3px 0 0 30px;
+}
+
+.box-btn-create {
+    width: 100%;
+    height: 70px;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & button {
+        height: 90%;
+        width: 85%;
+        background-color: var(--purple-default);
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        color: var(--form-default);
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+            background-color: #473acd;
+        }
+    }
+}
+
+
