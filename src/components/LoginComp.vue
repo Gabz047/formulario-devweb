@@ -7,12 +7,10 @@ const form = reactive({
 const callemail = ref(false)
 const callpassword = ref(false)
 const passwordtotext = ref(false)
+
 </script>
 <template>
   <div class="form-container">
-    <div class="img-container">
-      <img src="../assets/images/1296847 2.svg" />
-    </div>
     <div class="card">
       <div id="robilson">
         <H2>Robilson</H2>

@@ -35,10 +35,6 @@ const nextSection = computed(() => {
 </script>
 <template>
   <main class="create-main">
-    <section class="create-img">
-      <img src="../assets/images/1296847 2.svg" />
-    </section>
-
     <section class="create-section">
       <div class="create-container">
         <div class="company-brand">
