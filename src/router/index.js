@@ -14,6 +14,11 @@ const router = createRouter({
       path: '/create',
       name: 'create',
       component: CreateView
+    },
+    {
+      path: '/:id',
+      name: 'from',
+      component: () => import('../views/FormView.vue')
     }
   ]
 })

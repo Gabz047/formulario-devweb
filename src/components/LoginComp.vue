@@ -1,13 +1,27 @@
 <script setup>
-import { reactive, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
+import {useAuthStore} from '../stores/auth.js'
 const form = reactive({
   email: null,
   password: null
 })
+const store = useAuthStore()
 const callemail = ref(false)
 const callpassword = ref(false)
 const passwordtotext = ref(false)
 
+function Login(){
+
+}
+
+onMounted(() =>{
+  const username = localStorage.getItem('username')
+  const password = localStorage.getItem('password')
+
+  if (username && password){
+    store.LogUser({username: username, password: password})
+  }
+})
 </script>
 <template>
   <div class="form-container">
@@ -54,7 +68,7 @@ const passwordtotext = ref(false)
         </div>
       </div>
       <div class="btn-actions">
-          <button>Login</button>
+          <button @click="Login">Login</button>
           <p>Don't have an account? <span @click="$emit('create')">Register</span></p>
       </div>
     </div>
