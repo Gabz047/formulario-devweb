@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, reactive } from 'vue'
 import {useStatesStore} from '../stores/states'
 import { useLanguagesStore } from '../stores/languages'
 import EmailComponent from './CreateAccount_Components/inputs/EmailComponent.vue'
@@ -44,9 +44,10 @@ const nextSection = computed(() => {
   }
 })
 
-const icon = ((icon)=>{
-  return icon
-})  
+const inputsInfo = ref([
+  {tittle: 'Email', icon: 'mdi mdi-email', class: 'box-inputs-content'},
+  {tittle: 'Username', icon: 'mdi mdi-account', class: 'box-inputs-content'},
+])
 
 onMounted(() =>{
   store.GetStates('/states/')
@@ -69,9 +70,8 @@ onMounted(() =>{
         <h1 class="tittle-create">Create</h1>
 
         <section class="container-inputs s1" v-if="nextSection === 0">
-          <InputComponent :tittle="'email'" :icon="icon('mdi mdi-email')"/>
-
-          <UsernameComponent />
+          
+          <InputComponent v-for="item in inputsInfo" :tittle="item.tittle" :icon="item.icon" :class="item.class"/>
 
           <PasswordComponent />
 

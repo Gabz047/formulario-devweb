@@ -9,6 +9,9 @@ const props = defineProps({
     tittle: {
         type: String,
         required: true
+    },
+    class: {
+      type: String,
     }
 })
 </script>
@@ -17,7 +20,7 @@ const props = defineProps({
     <div class="box-inputs-img">
       <i :class="props.icon"></i>
     </div>
-    <div class="box-inputs-content">
+    <div :class="props.class">
       <label>
         <div class="box-inputs-tittle" @click="isTyping = !isTyping"><p>{{  props.tittle }}</p></div>
         <input type="text" :class="isTyping ? 'activeOn' : 'activeOff'" />
