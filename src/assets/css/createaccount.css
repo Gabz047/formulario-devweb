@@ -1,8 +1,8 @@
 @media (min-width: 200px){
 .create-main {
-    max-width: 100%;
+    max-width: 98vw;
     width: 100%;
-    height: 98%;
+    height: 98vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@
 }
 
 .create-section {
-    width: 100%;
+    width: 90vw;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -34,8 +34,8 @@
 }
 
 .create-container {
-    width: 100%;
-    height: 100%;
+    width: 90vw;
+    height: 80%;
     display: flex;
     flex-direction: column;
     background-color: var(--form-default);
@@ -49,7 +49,7 @@
     top: 0;
     left: 0;
     padding: 20px 0px 0px 20px;
-    font-size: 15px;
+    font-size: 30px;
 }
 
 .company-brand h2 {
@@ -62,8 +62,8 @@
 
 .tittle-create {
     text-align: center;
-    font-size: 55px;
-    margin-top: 100px;
+    font-size: 70px;
+    margin-top: 200px;
     font-weight: 900;
     color: var(--purple-default);
 }
@@ -92,7 +92,7 @@
 }
 
 .box-inputs-img i {
-    font-size: 46px;
+    font-size: 70px;
 }
 
 .box-inputs-content {
@@ -108,24 +108,28 @@
     position: absolute;
     right: 0;
     margin-right: 20px;
+    font-size: 35px;
 }
 
 .box-inputs-content select {
     width: 95%;
-    border: 1.5px solid;
+    border: 3px solid;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
     transition: 0.2s;
     font-weight: bold;
+    font-size: 20px;
+
     &:active {
         background-color: rgb(197, 197, 197);
     }
+
 }
 
 .box-inputs-tittle {
     height: auto;
     width: 100%;
-    font-size: 14px;
+    font-size: 23px;
     padding: 3px;
 }
 
@@ -144,7 +148,7 @@
     background-color: transparent;
     border: none;
     outline: 0;
-    font-size: 17px;
+    font-size: 30px;
     font-weight: bold;
     padding: 3px;
 }
@@ -155,8 +159,8 @@
     justify-content: center;
     position: absolute;
     bottom: 0;
-    margin-bottom: 40px;
-    font-size: 15px;
+    margin-bottom: 120px;
+    font-size: 30px;
     align-items: center;
     &:hover {
         color: var(--purple-default);cursor: pointer;    
@@ -164,7 +168,7 @@
 }
 
 .box-btn-next i{
-   font-size: 20px;
+   font-size: 30px;
    margin-left: 5px;
    transition: 0.2s;
 }
@@ -177,11 +181,11 @@
 .box-changeTo-login {
     position: absolute;
     bottom: 0;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 12px;
+    font-size: 27px;
 }
 
 
@@ -203,6 +207,10 @@
     flex-wrap: wrap;
 }
 
+.tittle-hobbie {
+    font-size: 25px;
+}
+
 .box-hobbies-send {
     display: flex;
     width: 100%;
@@ -214,18 +222,20 @@
 }
 
 .box-hobbies-send input {
-    width: 150px;
+    width: 300px;
+    height: 45px;
     border: none;
     outline: none;
     background-color: rgb(211, 211, 211);
     border-radius: 5px;
     padding: 3px 3px 3px 5px;
+    font-size: 25px;
 }
 
 .box-hobbies-send button {
     border: none;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 35px;
     transition: 0.1s;
 
     &:active {
@@ -254,22 +264,22 @@
     display: flex;
     padding: 10px;
     border-radius: 5px;
-    gap: 5px;
-    margin-left: 10px;
+    gap: 15px;
+    margin-left: 15px;
     background-color: #483bcf;
-    font-size: 13px;
+    font-size: 30px;
     color: var(--form-default);
     align-items: center;
 
-    max-width: 200px;
-    max-height: 40px;
+    max-width: 400px;
+    max-height: 70px;
 }
 
 .box-hobbies-list li p {
     max-width: 160px;
     overflow: hidden;
     width: 100%;
-    padding: 2px;
+    padding: 5px;
 }
 
 .box-hobbies-list li button {
@@ -277,7 +287,9 @@
     background-color: rgb(238, 91, 91);
     border-radius: 5px;
     color: var(--form-default);
-    width: 30px;
+    width: 50px;
+    height: 40px;
+    font-size: 25px;
     &:active {
         background-color: rgb(238, 69, 69);
     }
@@ -298,6 +310,10 @@
     padding: 10px 0 0 10%;
     align-items: center;
     height: 20%;
+
+    & p {
+        font-size: 25px;
+    }
 }
 
 .box-languages-list {
@@ -314,19 +330,27 @@
     display: flex;
     width: 100%;
     gap: 10px;
-    height: 40px;
+    height: 100%;
+    align-items: center;
 }
 
 .box-languages-list li {
     list-style: none;
-    width: 200px;
+    width: 300px;
+    height: 60px;
     background-color: #483bcf;
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     color: var(--form-default);
+    font-size: 25px;
+
+    & input {
+        width: 40px;
+        height: 25px;
+    }
 }
 
 .s3 {
@@ -422,6 +446,4 @@
         width: 40%;
     }
 }
-
-
 
