@@ -1,7 +1,8 @@
 <script setup>
-import { states, languages } from '@/utils/state'
 import { ref, computed, onMounted } from 'vue'
 import {useStatesStore} from '../stores/states'
+import { useLanguagesStore } from '../stores/languages'
+import EmailComponent from './CreateAccount_Components/inputs/EmailComponent.vue'
 import UsernameComponent from './CreateAccount_Components/inputs/UsernameComponent.vue'
 import PasswordComponent from './CreateAccount_Components/inputs/PasswordComponent.vue'
 import PasswordConfirmComponent from './CreateAccount_Components/inputs/PasswordConfirmComponent.vue'
@@ -13,9 +14,13 @@ import InputComponent from './InputComponent.vue'
 const hobbie = ref('')
 const formStore = useFormStore()
 const store = useStatesStore()
+const store2 = useLanguagesStore()
 
 const statesComp = computed(() =>{
   return store.states
+})
+const languagesComp = computed(() =>{
+  return store2.languages
 })
 
 function addHobbie(hobbie) {
@@ -45,7 +50,7 @@ const icon = ((icon)=>{
 
 onMounted(() =>{
   store.GetStates('/states/')
-  console.log(statesComp.value)
+  store2.GetLanguages('/languages/')
 })
 </script>
 <template>
@@ -118,9 +123,9 @@ onMounted(() =>{
 
             <div class="box-languages-list">
               <ul>
-                <li v-for="(language, index) in languages" :key="index">
+                <li v-for="language in languagesComp" :key="language.id">
                   <input type="checkbox" />
-                  <p>{{ language.name }}</p>
+                  <p>{{ language.description }}</p>
                 </li>
               </ul>
             </div>
