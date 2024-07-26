@@ -1,3 +1,4 @@
+@media (min-width: 200px){
 .create-main {
     max-width: 100%;
     width: 100%;
@@ -24,7 +25,7 @@
 }
 
 .create-section {
-    width: 90%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -48,7 +49,7 @@
     top: 0;
     left: 0;
     padding: 20px 0px 0px 20px;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .company-brand h2 {
@@ -61,14 +62,14 @@
 
 .tittle-create {
     text-align: center;
-    font-size: 60px;
-    margin-top: 23%;
+    font-size: 55px;
+    margin-top: 100px;
     font-weight: 900;
     color: var(--purple-default);
 }
 
 .container-inputs {
-    margin-top: 10%;
+    margin-top: 45px;
     height: 55%;
     width: 85%;
     display: flex;
@@ -329,13 +330,13 @@
 }
 
 .s3 {
-    height: 45%;
+    height: 300px;
 }
 
 .box-input-biography {
     width: 100%;
     background-color: var(--input-colors);
-    height: 250px;
+    height: 200px;
     border-radius: 8px;
 }
 
@@ -350,7 +351,7 @@
 .box-input-biography textarea{
     width: 100%;
     height: calc((95% - 32px));
-    margin-top: 5%;
+    margin-top: 10px;
     border-radius: 8px;
     border: none;
     background-color: var(--input-colors);
@@ -381,13 +382,13 @@
 .box-btn-create {
     width: 100%;
     height: 70px;
-    margin-top: 10%;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     & button {
-        height: 90%;
+        height: 80%;
         width: 85%;
         background-color: var(--purple-default);
         border: none;
@@ -401,5 +402,26 @@
         }
     }
 }
+}
+
+@media (min-width: 570px) {
+    .create-section {
+        width: 80%;
+    }
+}
+
+@media (min-width: 770px) {
+    .create-section {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .create-section {
+        width: 40%;
+    }
+}
+
 
 
