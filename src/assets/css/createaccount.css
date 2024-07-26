@@ -425,16 +425,16 @@
 
     @media (min-height: 700px) {
         .s3 {
-            height: 350px;
+            height: 300px;
         }
 
         .box-input-biography {
-            height: 230px;
+            height: 210px;
         }
 
         .box-btn-create {
-            margin-top: 60px;
-            height: 80px;
+            margin-top: 40px;
+            height: 60px;
 
             & button {
                 height: 100%;
