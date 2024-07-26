@@ -1,427 +1,444 @@
-@media (min-width: 200px){
-.create-main {
-    max-width: 100%;
-    width: 100%;
-    height: 98%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.create-img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-}
-
-.create-img img {
-    width: 2000px;
-    height: 1500px;
-    rotate: -10deg;
-}
-
-.create-section {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.create-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--form-default);
-    align-items: center;
-    position: relative;
-    border-radius: 8px;
-}
-
-.company-brand {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 0px 0px 20px;
-    font-size: 15px;
-}
-
-.company-brand h2 {
-    font-weight: 900;
-}
-
-.h2-purple {
-    color: var(--purple-default);
-}
-
-.tittle-create {
-    text-align: center;
-    font-size: 55px;
-    margin-top: 100px;
-    font-weight: 900;
-    color: var(--purple-default);
-}
-
-.container-inputs {
-    margin-top: 45px;
-    height: 55%;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.box-inputs {
-    height: 16%;
-    background-color: var(--input-colors);
-    border-radius: 8px;
-    display: flex;
-}
-
-.box-inputs-img {
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.box-inputs-img i {
-    font-size: 46px;
-}
-
-.box-inputs-content {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-.box-inputs-content i {
-    position: absolute;
-    right: 0;
-    margin-right: 20px;
-}
-
-.box-inputs-content select {
-    width: 95%;
-    border: 1.5px solid;
-    border-radius: 5px;
-    padding: 3px;
-    transition: 0.2s;
-    font-weight: bold;
-    &:active {
-        background-color: rgb(197, 197, 197);
+@media (min-width: 200px) and (min-height: 100px){
+    .create-main {
+        max-width: 100%;
+        width: 100%;
+        height: 98%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-}
-
-.box-inputs-tittle {
-    height: auto;
-    width: 100%;
-    font-size: 14px;
-    padding: 3px;
-}
-
-
-.box-inputs-tittle p{
-    font-weight: 500;
-}
-
-.activeOff {
- display: none;
-}
-
-.activeOn {
-    width: 97%;
-    height: 60%;
-    background-color: transparent;
-    border: none;
-    outline: 0;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 3px;
-}
-
-.box-btn-next {
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 40px;
-    font-size: 15px;
-    align-items: center;
-    &:hover {
-        color: var(--purple-default);cursor: pointer;    
+    
+    .create-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: start;
     }
-}
-
-.box-btn-next i{
-   font-size: 20px;
-   margin-left: 5px;
-   transition: 0.2s;
-}
-
-.box-btn-next:hover i {
-    margin-left: 10px;
-}
-
-
-.box-changeTo-login {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
-}
-
-
-.btn-login {
-    margin-left: 5px;
-    color: var(--purple-default);
-    transition: 0.2s;
-    &:hover {
-        color: #483bcf; 
-        cursor: pointer;    
+    
+    .create-img img {
+        width: 2000px;
+        height: 1500px;
+        rotate: -10deg;
     }
-}
-
-.box-input-hobbies {
-    height: 30%;
-    background-color: var(--input-colors);
-    border-radius: 8px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.box-hobbies-send {
-    display: flex;
-    width: 100%;
-    height: 25%;
-    gap: 10px;
-    padding: 10px 0 0 10%;
-    align-items: center;
-    cursor: pointer;
-}
-
-.box-hobbies-send input {
-    width: 150px;
-    border: none;
-    outline: none;
-    background-color: rgb(211, 211, 211);
-    border-radius: 5px;
-    padding: 3px 3px 3px 5px;
-}
-
-.box-hobbies-send button {
-    border: none;
-    background-color: transparent;
-    font-size: 20px;
-    transition: 0.1s;
-
-    &:active {
-        color: var(--purple-default);
-        margin-left: 5px;
+    
+    .create-section {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
-}
-
-.box-hobbies-list {
-    width: 100%;
-    height: 65%;
-   
-}
-
-.box-hobbies-list ul {
-    list-style: none;
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
-}
-
-.box-hobbies-list li {
-    display: flex;
-    padding: 10px;
-    border-radius: 5px;
-    gap: 5px;
-    margin-left: 10px;
-    background-color: #483bcf;
-    font-size: 13px;
-    color: var(--form-default);
-    align-items: center;
-
-    max-width: 200px;
-    max-height: 40px;
-}
-
-.box-hobbies-list li p {
-    max-width: 160px;
-    overflow: hidden;
-    width: 100%;
-    padding: 2px;
-}
-
-.box-hobbies-list li button {
-    border: none;
-    background-color: rgb(238, 91, 91);
-    border-radius: 5px;
-    color: var(--form-default);
-    width: 30px;
-    &:active {
-        background-color: rgb(238, 69, 69);
-    }
-}
-
-.box-input-languages {
-    height: 25%;
-    background-color: var(--input-colors);
-    border-radius: 8px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.box-languages-send {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    padding: 10px 0 0 10%;
-    align-items: center;
-    height: 20%;
-}
-
-.box-languages-list {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    list-style: none;
-    align-items: center;
-    overflow-x: auto;
-    padding: 10px;
-}
-
-.box-languages-list ul {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    height: 40px;
-}
-
-.box-languages-list li {
-    list-style: none;
-    width: 200px;
-    background-color: #483bcf;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    color: var(--form-default);
-}
-
-.s3 {
-    height: 300px;
-}
-
-.box-input-biography {
-    width: 100%;
-    background-color: var(--input-colors);
-    height: 200px;
-    border-radius: 8px;
-}
-
-.box-inputs-biography-tittle {
-    height: auto;
-    width: 100%;
-    font-size: 14px;
-    padding: 15px 0 0 30px;
-    font-weight: 500;
-}
-
-.box-input-biography textarea{
-    width: 100%;
-    height: calc((95% - 32px));
-    margin-top: 10px;
-    border-radius: 8px;
-    border: none;
-    background-color: var(--input-colors);
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    outline: none;
-    resize: none;
-}
-
-.box-file {
-    width: 100%;
-    background-color: var(--input-colors);
-    border-radius: 8px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.box-tittle-file {
-    height: auto;
-    width: 100%;
-    font-size: 14px;
-    padding: 3px 0 0 30px;
-}
-
-.box-btn-create {
-    width: 100%;
-    height: 70px;
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & button {
-        height: 80%;
-        width: 85%;
-        background-color: var(--purple-default);
-        border: none;
+    
+    .create-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--form-default);
+        align-items: center;
+        position: relative;
         border-radius: 8px;
-        font-size: 18px;
-        color: var(--form-default);
+    }
+    
+    .company-brand {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px 0px 0px 20px;
+        font-size: 15px;
+    }
+    
+    .company-brand h2 {
+        font-weight: 900;
+    }
+    
+    .h2-purple {
+        color: var(--purple-default);
+    }
+    
+    .tittle-create {
+        text-align: center;
+        font-size: 55px;
+        margin-top: 100px;
+        font-weight: 900;
+        color: var(--purple-default);
+    }
+    
+    .container-inputs {
+        margin-top: 45px;
+        height: 55%;
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .box-inputs {
+        height: 16%;
+        background-color: var(--input-colors);
+        border-radius: 8px;
+        display: flex;
+    }
+    
+    .box-inputs-img {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .box-inputs-img i {
+        font-size: 46px;
+    }
+    
+    .box-inputs-content {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .box-inputs-content i {
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+    }
+    
+    .box-inputs-content select {
+        width: 95%;
+        border: 1.5px solid;
+        border-radius: 5px;
+        padding: 3px;
         transition: 0.2s;
-        cursor: pointer;
-        &:hover {
-            background-color: #473acd;
+        font-weight: bold;
+        &:active {
+            background-color: rgb(197, 197, 197);
         }
     }
-}
-}
-
-@media (min-width: 570px) {
-    .create-section {
-        width: 80%;
+    
+    .box-inputs-tittle {
+        height: auto;
+        width: 100%;
+        font-size: 14px;
+        padding: 3px;
     }
-}
-
-@media (min-width: 770px) {
-    .create-section {
-        width: 60%;
+    
+    
+    .box-inputs-tittle p{
+        font-weight: 500;
     }
-}
-
-@media (min-width: 1100px) {
-
-    .create-section {
-        width: 40%;
+    
+    .activeOff {
+     display: none;
     }
-}
+    
+    .activeOn {
+        width: 97%;
+        height: 60%;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 3px;
+    }
+    
+    .box-btn-next {
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 40px;
+        font-size: 15px;
+        align-items: center;
+        &:hover {
+            color: var(--purple-default);cursor: pointer;    
+        }
+    }
+    
+    .box-btn-next i{
+       font-size: 20px;
+       margin-left: 5px;
+       transition: 0.2s;
+    }
+    
+    .box-btn-next:hover i {
+        margin-left: 10px;
+    }
+    
+    
+    .box-changeTo-login {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+    }
+    
+    
+    .btn-login {
+        margin-left: 5px;
+        color: var(--purple-default);
+        transition: 0.2s;
+        &:hover {
+            color: #483bcf; 
+            cursor: pointer;    
+        }
+    }
+    
+    .box-input-hobbies {
+        height: 30%;
+        background-color: var(--input-colors);
+        border-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .box-hobbies-send {
+        display: flex;
+        width: 100%;
+        height: 25%;
+        gap: 10px;
+        padding: 10px 0 0 10%;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .box-hobbies-send input {
+        width: 100px;
+        border: none;
+        outline: none;
+        background-color: rgb(211, 211, 211);
+        border-radius: 5px;
+        padding: 3px 3px 3px 5px;
+    }
+    
+    .box-hobbies-send button {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        transition: 0.1s;
+    
+        &:active {
+            color: var(--purple-default);
+            margin-left: 5px;
+        }
+    }
+    
+    .box-hobbies-list {
+        width: 100%;
+        height: 65%;
+       
+    }
+    
+    .box-hobbies-list ul {
+        list-style: none;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+    }
+    
+    .box-hobbies-list li {
+        display: flex;
+        padding: 10px;
+        border-radius: 5px;
+        gap: 5px;
+        margin-left: 10px;
+        background-color: #483bcf;
+        font-size: 13px;
+        color: var(--form-default);
+        align-items: center;
+    
+        max-width: 200px;
+        max-height: 40px;
+    }
+    
+    .box-hobbies-list li p {
+        max-width: 160px;
+        overflow: hidden;
+        width: 100%;
+        padding: 2px;
+    }
+    
+    .box-hobbies-list li button {
+        border: none;
+        background-color: rgb(238, 91, 91);
+        border-radius: 5px;
+        color: var(--form-default);
+        width: 30px;
+        &:active {
+            background-color: rgb(238, 69, 69);
+        }
+    }
+    
+    .box-input-languages {
+        height: 25%;
+        background-color: var(--input-colors);
+        border-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .box-languages-send {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        padding: 10px 0 0 10%;
+        align-items: center;
+        height: 20%;
+    }
+    
+    .box-languages-list {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        overflow-x: auto;
+        padding: 10px;
+    }
+    
+    .box-languages-list ul {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        height: 40px;
+    }
+    
+    .box-languages-list li {
+        list-style: none;
+        width: 200px;
+        background-color: #483bcf;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        color: var(--form-default);
+    }
+    
+    .s3 {
+        height: 220px;
+    }
+    
+    .box-input-biography {
+        width: 100%;
+        background-color: var(--input-colors);
+        height: 130px;
+        border-radius: 8px;
+    }
+    
+    .box-inputs-biography-tittle {
+        height: auto;
+        width: 100%;
+        font-size: 14px;
+        padding: 15px 0 0 30px;
+        font-weight: 500;
+    }
+    
+    .box-input-biography textarea{
+        width: 100%;
+        height: calc((95% - 32px));
+        margin-top: 10px;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--input-colors);
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        outline: none;
+        resize: none;
+    }
+    
+    .box-file {
+        width: 100%;
+        background-color: var(--input-colors);
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .box-tittle-file {
+        height: auto;
+        width: 100%;
+        font-size: 14px;
+        padding: 3px 0 0 30px;
+    }
+    
+    .box-btn-create {
+        width: 100%;
+        height: 70px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        & button {
+            height: 80%;
+            width: 85%;
+            background-color: var(--purple-default);
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            color: var(--form-default);
+            transition: 0.2s;
+            cursor: pointer;
+            &:hover {
+                background-color: #473acd;
+            }
+        }
+    }
+    }
+    
+    @media (min-width: 570px) {
+        .create-section {
+            width: 80%;
+        }
+    }
+    
+    @media (min-width: 770px) {
+        .create-section {
+            width: 60%;
+        }
+    }
+    
+    @media (min-width: 1100px) {
+    
+        .create-section {
+            width: 40%;
+        }
+    }
 
+    @media (min-height: 700px) {
+        .s3 {
+            height: 300px;
+        }
 
+        .box-input-biography {
+            height: 210px;
+        }
 
+        .box-btn-create {
+            margin-top: 40px;
+            height: 60px;
+
+            & button {
+                height: 100%;
+                font-size: 25px;
+            }
+        }
+    }

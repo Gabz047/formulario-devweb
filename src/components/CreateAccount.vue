@@ -50,6 +50,10 @@ onMounted(() =>{
 </script>
 <template>
   <main class="create-main">
+    <section class="create-img">
+       <!--<img src="../assets/images/1296847 2.svg" /> -->
+    </section>
+
     <section class="create-section">
       <div class="create-container">
         <div class="company-brand">
@@ -82,8 +86,8 @@ onMounted(() =>{
             <div class="box-inputs-content">
             <div class="box-inputs-tittle"><p>State</p></div>
             <select id="">
-              <option v-for="state in statesComp" :key="state.id" :value="state.id">
-                {{ state.description }}
+              <option v-for="state in states" :key="state.id" :value="state.id">
+                <p class="option-name">{{ state.name }}</p>
               </option>
             </select>
             </div>
