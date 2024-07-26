@@ -2,13 +2,13 @@
 import { states, languages } from '@/utils/state'
 import { ref, computed, onMounted } from 'vue'
 import {useStatesStore} from '../stores/states'
-import EmailComponent from './CreateAccount_Components/inputs/EmailComponent.vue'
 import UsernameComponent from './CreateAccount_Components/inputs/UsernameComponent.vue'
 import PasswordComponent from './CreateAccount_Components/inputs/PasswordComponent.vue'
 import PasswordConfirmComponent from './CreateAccount_Components/inputs/PasswordConfirmComponent.vue'
 import AdressComponent from './CreateAccount_Components/inputs/AdressComponent.vue'
 import CityComponent from './CreateAccount_Components/inputs/CityComponent.vue'
 import { useFormStore } from '../stores/form'
+import InputComponent from './InputComponent.vue'
 
 const hobbie = ref('')
 const formStore = useFormStore()
@@ -39,6 +39,10 @@ const nextSection = computed(() => {
   }
 })
 
+const icon = ((icon)=>{
+  return icon
+})  
+
 onMounted(() =>{
   store.GetStates('/states/')
   console.log(statesComp.value)
@@ -60,7 +64,7 @@ onMounted(() =>{
         <h1 class="tittle-create">Create</h1>
 
         <section class="container-inputs s1" v-if="nextSection === 0">
-          <EmailComponent />
+          <InputComponent :tittle="'email'" :icon="icon('mdi mdi-email')"/>
 
           <UsernameComponent />
 
