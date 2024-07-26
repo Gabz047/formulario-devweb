@@ -41,4 +41,4 @@ export const languages = ref([
         { id: 'go', name: 'Go' },
         { id: 'rust', name: 'Rust' },
         { id: 'ts', name: 'TypeScript' },
-      ]);
+]);

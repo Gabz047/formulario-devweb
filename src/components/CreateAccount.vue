@@ -1,6 +1,7 @@
 <script setup>
 import { states, languages } from '@/utils/state'
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import {useStatesStore} from '../stores/states'
 import EmailComponent from './CreateAccount_Components/inputs/EmailComponent.vue'
 import UsernameComponent from './CreateAccount_Components/inputs/UsernameComponent.vue'
 import PasswordComponent from './CreateAccount_Components/inputs/PasswordComponent.vue'
@@ -11,6 +12,11 @@ import { useFormStore } from '../stores/form'
 
 const hobbie = ref('')
 const formStore = useFormStore()
+const store = useStatesStore()
+
+const statesComp = computed(() =>{
+  return store.states
+})
 
 function addHobbie(hobbie) {
     formStore.hobbies.push(hobbie)
@@ -31,6 +37,11 @@ const nextSection = computed(() => {
   } else {
     return counter.value
   }
+})
+
+onMounted(() =>{
+  store.GetStates('/states/')
+  console.log(statesComp.value)
 })
 </script>
 <template>
@@ -67,8 +78,8 @@ const nextSection = computed(() => {
             <div class="box-inputs-content">
             <div class="box-inputs-tittle"><p>State</p></div>
             <select id="">
-              <option v-for="state in states" :key="state.id" :value="state.id">
-                {{ state.name }}
+              <option v-for="state in statesComp" :key="state.id" :value="state.id">
+                {{ state.description }}
               </option>
             </select>
             </div>
