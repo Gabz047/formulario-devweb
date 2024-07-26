@@ -423,7 +423,7 @@
         }
     }
 
-    @media (min-height: 700px) {
+    @media (min-height: 800px) {
         .s3 {
             height: 300px;
         }
