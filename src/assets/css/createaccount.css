@@ -78,10 +78,10 @@
     }
     
     .box-inputs {
-        height: 16%;
         background-color: var(--input-colors);
         border-radius: 8px;
         display: flex;
+        flex-wrap: wrap;
     }
     
     .box-inputs-img {
@@ -125,8 +125,33 @@
     .box-inputs-tittle {
         height: auto;
         width: 100%;
-        font-size: 14px;
+        font-size: 16px;
         padding: 3px;
+        display: flex;
+        height: 30px;
+        gap: 10px;
+        align-items: center;
+
+        & input {
+            border: none;
+            outline: none;
+            height: 100%;
+            background-color: var(--form-default);
+            border-radius: 8px;
+            padding: 3px;
+        }
+
+        & button {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        transition: 0.1s;
+    
+        &:active {
+            color: var(--purple-default);
+            margin-left: 5px;
+        }
+        }
     }
     
     
