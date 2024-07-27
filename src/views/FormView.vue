@@ -4,7 +4,7 @@ import { useAuthStore } from "@/stores/auth";
 import { computed, onMounted } from "vue";
     const store = useAuthStore()
     const formUser = computed(() =>{
-        return store.userInfo
+        return store.form
     })
 
 const api = new API()
@@ -51,10 +51,9 @@ onMounted(() =>{
            <h1>programming Languages:</h1> 
            <h1 v-for="language in formUser.programming" :key="language.id">{{ language.description }}</h1>
         </div>
-        <div  class="infos">
-            <h1>States: </h1>
-            <h1 v-for="state in formUser.states" :key="state.id">{{ state.description }}</h1>
-        </div>
+        <h1>State: {{formUser.states.description}}</h1>
+        <h1>biography:</h1>
+        <h1>{{formUser.biografia}}</h1>
         <div class="actions">
             <button @click="deletarform(user.id, user.password)">Delete</button>
         </div>

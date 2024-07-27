@@ -18,6 +18,8 @@ async function removeHobbie(hobbie,index) {
     const findhobbie = hobbiesapi.find(hobbie => hobbie.description === hobbie)
     await api.Deletar(`/hobbies/${findhobbie.id}`)
 }
+
+
 </script>
 <template>
     <div class="box-input-hobbies">
@@ -31,7 +33,7 @@ async function removeHobbie(hobbie,index) {
               <ul>
                 <li v-for="(hobbie,index) in formStore.hobbies" :key="index">
                   <p>{{ hobbie }}</p>
-                  <button @click="removeHobbie(formStore.hobbies)"><i class="mdi mdi-close"></i></button>
+                  <button @click="removeHobbie(formStore.hobbies, index)"><i class="mdi mdi-close"></i></button>
                 </li>
               </ul>
             </div>

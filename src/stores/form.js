@@ -1,4 +1,5 @@
 import API from "@/api/global";
+import router from "@/router";
 import { defineStore } from "pinia";
 import { reactive, ref } from "vue";
 const api = new API()
@@ -8,10 +9,12 @@ export const useFormStore = defineStore("user", ()=>{
     const languages = ref([])
     const states = ref([])
     const hobbies = ref([])
+    const biography = ref('')
 
     async function GetAll(linklanguages, linkstates){
         languages.value = await api.Listar(linklanguages) 
         states.value = await api.Listar(linkstates)
+    
     }
 
     const info = ref([
@@ -29,10 +32,10 @@ export const useFormStore = defineStore("user", ()=>{
         username: '',
         password: '',
         confirmPassword: '',
-        adress: '',
+        address: '',
         city: '',
-        state: '',
-        biography: '',
+        states: '',
+        biografia: '',
         hobbies: [],
         programming: []
     })
@@ -40,17 +43,40 @@ export const useFormStore = defineStore("user", ()=>{
     
 
     async function SendForm(){
+        const  hobbyapi = await api.Listar('/hobbies/')
         userInfo.email = info.value[0].value
         userInfo.username = info.value[1].value
         userInfo.password = info.value[2].value
         userInfo.confirmPassword = info.value[3].value
-        userInfo.adress = info.value[4].value
+        userInfo.address = info.value[4].value
         userInfo.city = info.value[5].value
-        userInfo.state = info.value[6].value
+        userInfo.states = info.value[6].value
+        userInfo.biografia = biography.value
         userInfo.hobbies = hobbies.value
+        
+        console.log(userInfo)
+
+        for(const language of userInfo.programming){
+            let arr = []
+            const findlanguage = languages.value.find(lang => lang.description === language)
+            arr.push(findlanguage.id)
+            userInfo.programming = arr
+        }
+
+        for(const hobby of userInfo.hobbies){
+            let arr = []
+            const findhobby = hobbyapi.find(hob => hob.description === hobby)
+            arr.push(findhobby.id)
+            userInfo.hobbies = arr
+        }
+
+        alert('usuario criado')
+
+        router.push('/')
+
         await api.Criar('/forms/', userInfo)
 
     }
 
-    return {languages, GetAll, states, SendForm, info, userInfo, hobbies}
+    return {languages, GetAll, states, SendForm, info, userInfo, hobbies, biography}
 })

@@ -26,7 +26,7 @@ const nextSection = computed(() => {
 })
 
 onMounted(() =>{
-  formStore.GetAll('/languages/', '/hobbies/')
+  formStore.GetAll('/languages/', '/states/')
   
 })
 </script>
@@ -50,11 +50,8 @@ onMounted(() =>{
         </section>
 
         <section class="container-inputs s2" v-if="nextSection === 1">
-
           <InputComponent v-for="item, index in formStore.info" :key="index" :tittle="item.tittle" :icon="item.icon" :class="item.class" v-model="item.value" :index="index" :eye="item.eye" :section="2" :select-input="item.selectInput" :heigth="item.heigth" />
-
           <InputHobbiesComponent />
-
           <InputLanguagesComponent />
         </section>
 

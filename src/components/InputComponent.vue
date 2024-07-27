@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import { useFormStore } from '@/stores/form';
 
 const formStore = useFormStore()
@@ -50,6 +50,10 @@ const props = defineProps({
 const emits = defineEmits([
   'changeType'
 ])
+
+watch(formStore.info[6].value, (state) =>{
+  console.log(state)
+})  
 </script>
 <template>
   <span class="box-inputs" v-if="props.section === formStore.info[props.index].section" :style="{ height: props.heigth + '%'}" >
@@ -60,8 +64,8 @@ const emits = defineEmits([
       <label>
         <div class="box-inputs-tittle" @click="isTyping = !isTyping"><p>{{  props.tittle }}</p></div>
         <input v-if="props.selectInput === 1" :type="props.type" :class="isTyping ? 'activeOn' : 'activeOff'" v-model="formStore.info[props.index].value"/>
-        <select v-if="props.selectInput === 2">
-              <option v-for="state in statesComp" :key="state.id" :value="state.id">
+        <select v-if="props.selectInput === 2" v-model="formStore.info[props.index].value">
+              <option v-for="state in statesComp" :key="state.id" :value="state.id" >
                 <p class="option-name">{{ state.description }}</p>
               </option>
         </select>
