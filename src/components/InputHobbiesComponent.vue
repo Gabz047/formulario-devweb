@@ -8,7 +8,7 @@ const hobbie = ref('')
 const formStore = useFormStore()
 
 async function addHobbie(hobbie) {
-    formStore.userInfo.hobbies.push(hobbie)
+    formStore.hobbies.push(hobbie)
     await api.Criar('/hobbies/', {description: hobbie})
 }
 

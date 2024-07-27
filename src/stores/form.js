@@ -7,6 +7,7 @@ export const useFormStore = defineStore("user", ()=>{
 
     const languages = ref([])
     const states = ref([])
+    const hobbies = ref([])
 
     async function GetAll(linklanguages, linkstates){
         languages.value = await api.Listar(linklanguages) 
@@ -46,9 +47,10 @@ export const useFormStore = defineStore("user", ()=>{
         userInfo.adress = info.value[4].value
         userInfo.city = info.value[5].value
         userInfo.state = info.value[6].value
+        userInfo.hobbies = hobbies.value
         await api.Criar('/forms/', userInfo)
 
     }
 
-    return {languages, GetAll, states, SendForm, info, userInfo}
+    return {languages, GetAll, states, SendForm, info, userInfo, hobbies}
 })
