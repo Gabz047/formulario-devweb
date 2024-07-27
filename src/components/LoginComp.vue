@@ -1,8 +1,8 @@
 <script setup>
-import { onMounted, reactive, ref } from 'vue'
+import { reactive, ref } from 'vue'
 import {useAuthStore} from '../stores/auth.js'
 const form = reactive({
-  email: null,
+  username: null,
   password: null
 })
 const store = useAuthStore()
@@ -11,17 +11,10 @@ const callpassword = ref(false)
 const passwordtotext = ref(false)
 
 function Login(){
-
+  store.LogUser(form)
 }
 
-onMounted(() =>{
-  const username = localStorage.getItem('username')
-  const password = localStorage.getItem('password')
 
-  if (username && password){
-    store.LogUser({username: username, password: password})
-  }
-})
 </script>
 <template>
   <div class="form-container">
@@ -35,11 +28,11 @@ onMounted(() =>{
       </div>
       <form>
         <div class="form-fields">
-          <i class="mdi mdi-email"></i>
+          <i class="mdi mdi-account"></i>
           <div class="input-container">
             <label>
-              <span class="floating-label" @click="callemail = !callemail">Email</span>
-              <input type="text" id="emailinput" :class="callemail ? 'inputon' : 'inputoff'" v-model="form.email"/>
+              <span class="floating-label" @click="callemail = !callemail">Username</span>
+              <input type="text" id="emailinput" :class="callemail ? 'inputon' : 'inputoff'" v-model="form.username"/>
             </label>
           </div>
         </div>
