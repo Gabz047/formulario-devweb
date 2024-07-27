@@ -24,7 +24,6 @@ onMounted(() =>{
     callemail.value = true
     callpassword.value = true
   }
-  
 })
 
 </script>
@@ -69,7 +68,7 @@ onMounted(() =>{
               <label for="">Remember me</label>
           </div>
           <div>
-            <p for="">Forgot password?</p>
+            <router-link to="/forgot"><p for="">Forgot password?</p></router-link>
         </div>
       </div>
       <div class="btn-actions">

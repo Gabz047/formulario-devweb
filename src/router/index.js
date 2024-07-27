@@ -19,6 +19,11 @@ const router = createRouter({
       path: '/:id',
       name: 'from',
       component: () => import('../views/FormView.vue')
+    },
+    {
+      path: '/forgot',
+      name: 'forgot',
+      component: () => import('../views/ForgotView.vue')
     }
   ]
 })
