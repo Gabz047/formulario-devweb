@@ -1,10 +1,14 @@
 <script setup>
 import { useFormStore } from '../stores/form'
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 const formStore = useFormStore()
 
 const languagesComp = computed(() =>{
   return formStore.languages
+})
+
+onMounted(()=>{
+    formStore.GetAll('/languages/', '/states/' )
 })
 </script>
 <template>
@@ -17,7 +21,7 @@ const languagesComp = computed(() =>{
 <div class="box-languages-list">
   <ul>
     <li v-for="language in languagesComp" :key="language.id">
-      <input type="checkbox" />
+      <input type="checkbox" :value="language.description" v-model="formStore.userInfo.programming" />
       <p>{{ language.description }}</p>
     </li>
   </ul>

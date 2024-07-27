@@ -1,11 +1,15 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useFormStore } from '@/stores/form';
 
 const formStore = useFormStore()
 const isTyping = ref(false)
 const statesComp = computed(() =>{
   return formStore.states
+})
+
+onMounted(()=>{
+    formStore.GetAll('/languages/', '/states/' )
 })
 
 const props = defineProps({

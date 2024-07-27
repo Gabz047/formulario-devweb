@@ -25,10 +25,6 @@ const nextSection = computed(() => {
   }
 })
 
-function create() {
-  console.log(formStore.info[5].section)
-}
-
 onMounted(() =>{
   formStore.GetAll('/languages/', '/hobbies/')
   
@@ -69,7 +65,7 @@ onMounted(() =>{
         </section>
 
         <div class="box-btn-create" v-if="nextSection === 2">
-          <button @click="create()">Create</button>
+          <button @click="formStore.SendForm()">Create</button>
         </div>
 
         <LowerInfos @next="counter++" :state="nextSection" @login="emits('login')" />

@@ -1,14 +1,12 @@
 import API from "@/api/global";
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 const api = new API()
 
 export const useFormStore = defineStore("user", ()=>{
 
-    const hobbies = ref([])
     const languages = ref([])
     const states = ref([])
-    const email = ref(null)
 
     async function GetAll(linklanguages, linkstates){
         languages.value = await api.Listar(linklanguages) 
@@ -25,12 +23,32 @@ export const useFormStore = defineStore("user", ()=>{
         {value: '', tittle: `State`, icon: `mdi mdi-map-marker-radius`, class: `box-inputs-content`, eye: false, section: 2, selectInput: 2, heigth: 16 },
         ])
 
+    const userInfo = reactive({
+        email: '',
+        username: '',
+        password: '',
+        confirmPassword: '',
+        adress: '',
+        city: '',
+        state: '',
+        biography: '',
+        hobbies: [],
+        programming: []
+    })
+
     
 
-    function SendForm(form){
-        email.value = form.email
-        console.log(email.value)
+    async function SendForm(){
+        userInfo.email = info.value[0].value
+        userInfo.username = info.value[1].value
+        userInfo.password = info.value[2].value
+        userInfo.confirmPassword = info.value[3].value
+        userInfo.adress = info.value[4].value
+        userInfo.city = info.value[5].value
+        userInfo.state = info.value[6].value
+        await api.Criar('/forms/', userInfo)
+
     }
 
-    return {languages, GetAll, hobbies, states, SendForm, info}
+    return {languages, GetAll, states, SendForm, info, userInfo}
 })
