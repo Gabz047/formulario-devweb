@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 import {useAuthStore} from '../stores/auth.js'
 const form = reactive({
   username: null,
@@ -14,6 +14,18 @@ function Login(){
   store.LogUser(form)
 }
 
+onMounted(() =>{
+  const username = localStorage.getItem('username')
+  const password = localStorage.getItem('password')
+
+  if(username && password){
+    form.username = username
+    form.password = password
+    callemail.value = true
+    callpassword.value = true
+  }
+  
+})
 
 </script>
 <template>
