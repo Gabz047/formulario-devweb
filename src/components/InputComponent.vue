@@ -44,6 +44,9 @@ const props = defineProps({
     },
     isHobbie: {
       type: Boolean,
+    },
+    typePassword: {
+      type: Boolean
     }
 })
 
@@ -71,9 +74,10 @@ watch(formStore.info[6].value, (state) =>{
         </select>
       </label>
       <i
-        :class="!hidepassword ? 'mdi mdi-eye' : 'mdi mdi-eye-off'"
+        :class="props.typePassword ? 'mdi mdi-eye' : 'mdi mdi-eye-off'"
         @click="emits('changeType')"
        v-if="props.eye"></i>
+
     </div>
   </span>
 </template>

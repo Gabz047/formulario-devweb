@@ -46,7 +46,7 @@ onMounted(() =>{
         <h1 class="tittle-create">Create</h1>
 
         <section class="container-inputs s1" v-if="nextSection === 0">  
-          <InputComponent v-for="item, index in formStore.info" :key="index" :tittle="item.tittle" :icon="item.icon" :class="item.class" v-model="item.value" :index="index" :eye="item.eye" :type="hidepassword ? item.type1 : item.type2" @change-type="hidepassword = !hidepassword" :section="1" :select-input="item.selectInput" :heigth="item.heigth" />
+          <InputComponent v-for="item, index in formStore.info" :key="index" :tittle="item.tittle" :icon="item.icon" :class="item.class" v-model="item.value" :index="index" :eye="item.eye" :type="hidepassword ? item.type1 : item.type2" @change-type="hidepassword = !hidepassword" :section="1" :select-input="item.selectInput" :heigth="item.heigth" :typePassword="hidepassword"/>
         </section>
 
         <section class="container-inputs s2" v-if="nextSection === 1">
