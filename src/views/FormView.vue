@@ -38,22 +38,22 @@ onMounted(() =>{
 <template>
     <div class="form-container">
         <div class="formuser">
-            <h1>username: {{formUser.username}}</h1>
-            <h1>email: {{formUser.email}}</h1>
-            <h1>address: {{formUser.address}}</h1>
-            <h1>city: {{formUser.city}}</h1>
-            <h1>password: {{formUser.password}}</h1>
+            <p>username: {{formUser.username}}</p>
+            <p>email: {{formUser.email}}</p>
+            <p>address: {{formUser.address}}</p>
+            <p>city: {{formUser.city}}</p>
+            <p>password: {{formUser.password}}</p>
         <div class="infos">
-            <h1>hobbie:</h1>
-            <h1 v-for="hobbie in formUser.hobbies" :key="hobbie.id">{{hobbie.description}}</h1>
+            <p>hobbie:</p>
+            <p v-for="hobbie in formUser.hobbies" :key="hobbie.id">{{hobbie.description}}</p>
         </div>
         <div class="infos">
-           <h1>programming Languages:</h1> 
-           <h1 v-for="language in formUser.programming" :key="language.id">{{ language.description }}</h1>
+           <p>programming Languages:</p> 
+           <p v-for="language in formUser.programming" :key="language.id">{{ language.description }}</p>
         </div>
-        <h1>State: {{formUser.states.description}}</h1>
-        <h1>biography:</h1>
-        <h1>{{formUser.biografia}}</h1>
+        <p>State: {{formUser.states.description}}</p>
+        <p>biography:</p>
+        <p>{{formUser.biografia}}</p>
         <div class="actions">
             <button @click="deletarform(user.id, user.password)">Delete</button>
         </div>
