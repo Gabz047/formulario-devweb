@@ -2,14 +2,13 @@
     display: flex;
     justify-content: center;
     height: 100%;
+    width: 100%;
     align-items: center;
-    padding: 20px;
- 
-    
+    padding: 10px;
 }
 .formuser{
     background-color: white;
-    width: 75%;
+    width: 50%;
     max-height: 100%;
     display: flex;
     flex-direction: column;
@@ -17,8 +16,11 @@
     align-items: center;
     gap: 20px;
     overflow-y: auto;
-    padding: 5px;
-  
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    margin-top: 100px;
 
     & p {
         font-weight: 500;
@@ -47,4 +49,14 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
+ }
+
+ @media (max-width: 900px) {
+
+    .formuser {
+        width: 95%;
+    }
+    .formuser p {
+        font-size: 20px;
+    }
  }
